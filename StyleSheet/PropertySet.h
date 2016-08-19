@@ -16,18 +16,18 @@ namespace StyleSheet
 {
     class CssPropertySet
     {
-        static CssPropertySet parse(const std::string& str);
+        static CssPropertySet parse(const string& str);
         
         void add(const CssProperty& prop);
         void add(const CssPropertySet& propSet);
-        void remove(const std::string&);
+        void remove(const string&);
 
-        std::size_t size() const;
+        size_t size() const;
         bool empty() const;
         
-        const CssProperty& getProperty(const std::string& name) const;
+        const CssProperty& getProperty(const string& name) const;
         
-        std::string toString() const;
+        string toString() const;
     };
 }
 

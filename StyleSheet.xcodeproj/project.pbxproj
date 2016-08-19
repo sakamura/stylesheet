@@ -21,6 +21,8 @@
 		96EF25671D6773AF00F95C51 /* PropertySet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF25581D675CFA00F95C51 /* PropertySet.h */; };
 		96EF25681D6773B200F95C51 /* Selector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF255B1D675D0700F95C51 /* Selector.h */; };
 		96EF25691D6773B600F95C51 /* Style.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF255E1D675D0F00F95C51 /* Style.h */; };
+		96EF256B1D67745D00F95C51 /* StyleSheetGlobals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF256A1D67745400F95C51 /* StyleSheetGlobals.h */; };
+		96EF256D1D6778F800F95C51 /* StyleSheetGlobals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF256C1D6778F800F95C51 /* StyleSheetGlobals.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,7 @@
 				96EF25671D6773AF00F95C51 /* PropertySet.h in CopyFiles */,
 				96EF25681D6773B200F95C51 /* Selector.h in CopyFiles */,
 				96EF25691D6773B600F95C51 /* Style.h in CopyFiles */,
+				96EF256B1D67745D00F95C51 /* StyleSheetGlobals.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,8 @@
 		96EF255E1D675D0F00F95C51 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
 		96EF25601D675FD600F95C51 /* Property.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Property.cpp; sourceTree = "<group>"; };
 		96EF25611D675FD600F95C51 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		96EF256A1D67745400F95C51 /* StyleSheetGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleSheetGlobals.h; sourceTree = "<group>"; };
+		96EF256C1D6778F800F95C51 /* StyleSheetGlobals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StyleSheetGlobals.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,8 @@
 				96EF255B1D675D0700F95C51 /* Selector.h */,
 				96EF255D1D675D0F00F95C51 /* Style.cpp */,
 				96EF255E1D675D0F00F95C51 /* Style.h */,
+				96EF256C1D6778F800F95C51 /* StyleSheetGlobals.cpp */,
+				96EF256A1D67745400F95C51 /* StyleSheetGlobals.h */,
 			);
 			path = StyleSheet;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				96EF25561D675CEF00F95C51 /* Parser.cpp in Sources */,
 				96EF25621D675FD600F95C51 /* Property.cpp in Sources */,
 				96EF25591D675CFA00F95C51 /* PropertySet.cpp in Sources */,
+				96EF256D1D6778F800F95C51 /* StyleSheetGlobals.cpp in Sources */,
 				96EF25531D675CE100F95C51 /* Element.cpp in Sources */,
 				96EF255F1D675D0F00F95C51 /* Style.cpp in Sources */,
 				96EF25501D675CD000F95C51 /* Document.cpp in Sources */,

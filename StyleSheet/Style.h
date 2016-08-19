@@ -20,17 +20,17 @@ namespace StyleSheet
     class CssStyle
     {
     public:
-        CssStyle(const std::string& cssId, const std::string& cssType);
+        CssStyle(const string& cssId, const string& cssType);
         const CssSelector& getIdSelector() const;
         const CssSelector& getTypeSelector() const;
         
-        void setType(const std::string& cssType);
+        void setType(const string& cssType);
         const CssSelectorList& getClassSelectors() const;
         
-        void addClasses(const std::string& classTagValue);
-        void addClass(const std::string& c);
-        void removeClass(const std::string& c);
-        bool hasClass(const std::string& c);
+        void addClasses(const string& classTagValue);
+        void addClass(const string& c);
+        void removeClass(const string& c);
+        bool hasClass(const string& c);
         void setInlineProperties(const CssPropertySet& inlineProperies);
         const CssPropertySet& getInlineProperties() const;
     };

@@ -15,15 +15,15 @@ namespace StyleSheet
 {
     class CssDocument
     {
-        static CssDocument parse(const std::string& doc);
+        static CssDocument parse(const string& doc);
         
         CssDocument();
         
-        std::size_t getElementCount() const;
+        size_t getElementCount() const;
         CssElement getElement(const CssSelector& selector) const;
         bool hasSelector(const CssSelector& selector) const;
         void addElement(const CssElement& element);
-        std::string toString() const;
+        string toString() const;
         
     };
 }

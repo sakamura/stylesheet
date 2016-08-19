@@ -9,7 +9,7 @@
 #ifndef Property_h
 #define Property_h
 
-#include <string>
+#include "StyleSheetGlobals.h"
 
 namespace StyleSheet
 {
@@ -17,17 +17,17 @@ namespace StyleSheet
     {
     public:
         static const CssProperty& Empty();
-        static CssProperty parse(const std::string& str);
+        static CssProperty parse(const string& str);
         
-        CssProperty(const std::string& name, const std::string& value);
+        CssProperty(const string& name, const string& value);
         
         bool operator<(const CssProperty& p) const;
-        const std::string& getName() const;
-        const std::string& getValue() const;
+        const string& getName() const;
+        const string& getValue() const;
         
         bool isValid() const;
         
-        std::string toString() const;
+        string toString() const;
     };
 }
 

@@ -11,25 +11,24 @@
 
 #include "Selector.h"
 #include "PropertySet.h"
-#include <set>
 
 namespace StyleSheet
 {
     class CssElement
     {
-        static CssElement parse(const std::string& str);
+        static CssElement parse(const string& str);
         
         CssElement(const CssSelector& selector, const CssPropertySet& properties);
         
         bool operator<(const CssElement& e) const;
         
         const CssSelector& getSelector() const;
-        std::size_t getPropertyCount() const;
+        size_t getPropertyCount() const;
         const CssPropertySet& getProperties() const;
         
         void addProperty(const CssProperty& prop);
         
-        std::string toString() const;
+        string toString() const;
     };
 }
 
