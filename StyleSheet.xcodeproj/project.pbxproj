@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96EF250B1D662D2F00F95C51 /* StyleSheet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF250A1D662D2F00F95C51 /* StyleSheet.h */; };
-		96EF250D1D662D2F00F95C51 /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EF250C1D662D2F00F95C51 /* StyleSheet.m */; };
+		96EF25501D675CD000F95C51 /* Document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF254E1D675CD000F95C51 /* Document.cpp */; };
+		96EF25531D675CE100F95C51 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF25511D675CE100F95C51 /* Element.cpp */; };
+		96EF25561D675CEF00F95C51 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF25541D675CEE00F95C51 /* Parser.cpp */; };
+		96EF25591D675CFA00F95C51 /* PropertySet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF25571D675CFA00F95C51 /* PropertySet.cpp */; };
+		96EF255C1D675D0700F95C51 /* Selector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF255A1D675D0700F95C51 /* Selector.cpp */; };
+		96EF255F1D675D0F00F95C51 /* Style.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF255D1D675D0F00F95C51 /* Style.cpp */; };
+		96EF25621D675FD600F95C51 /* Property.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96EF25601D675FD600F95C51 /* Property.cpp */; };
+		96EF25631D6773A300F95C51 /* Document.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF254F1D675CD000F95C51 /* Document.h */; };
+		96EF25641D6773A600F95C51 /* Element.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF25521D675CE100F95C51 /* Element.h */; };
+		96EF25651D6773A800F95C51 /* Parser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF25551D675CEF00F95C51 /* Parser.h */; };
+		96EF25661D6773AC00F95C51 /* Property.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF25611D675FD600F95C51 /* Property.h */; };
+		96EF25671D6773AF00F95C51 /* PropertySet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF25581D675CFA00F95C51 /* PropertySet.h */; };
+		96EF25681D6773B200F95C51 /* Selector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF255B1D675D0700F95C51 /* Selector.h */; };
+		96EF25691D6773B600F95C51 /* Style.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96EF255E1D675D0F00F95C51 /* Style.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +30,13 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				96EF250B1D662D2F00F95C51 /* StyleSheet.h in CopyFiles */,
+				96EF25631D6773A300F95C51 /* Document.h in CopyFiles */,
+				96EF25641D6773A600F95C51 /* Element.h in CopyFiles */,
+				96EF25651D6773A800F95C51 /* Parser.h in CopyFiles */,
+				96EF25661D6773AC00F95C51 /* Property.h in CopyFiles */,
+				96EF25671D6773AF00F95C51 /* PropertySet.h in CopyFiles */,
+				96EF25681D6773B200F95C51 /* Selector.h in CopyFiles */,
+				96EF25691D6773B600F95C51 /* Style.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +44,20 @@
 
 /* Begin PBXFileReference section */
 		96EF25071D662D2E00F95C51 /* libStyleSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStyleSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		96EF250A1D662D2F00F95C51 /* StyleSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleSheet.h; sourceTree = "<group>"; };
-		96EF250C1D662D2F00F95C51 /* StyleSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StyleSheet.m; sourceTree = "<group>"; };
+		96EF254E1D675CD000F95C51 /* Document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Document.cpp; sourceTree = "<group>"; };
+		96EF254F1D675CD000F95C51 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		96EF25511D675CE100F95C51 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Element.cpp; sourceTree = "<group>"; };
+		96EF25521D675CE100F95C51 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		96EF25541D675CEE00F95C51 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		96EF25551D675CEF00F95C51 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		96EF25571D675CFA00F95C51 /* PropertySet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertySet.cpp; sourceTree = "<group>"; };
+		96EF25581D675CFA00F95C51 /* PropertySet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertySet.h; sourceTree = "<group>"; };
+		96EF255A1D675D0700F95C51 /* Selector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Selector.cpp; sourceTree = "<group>"; };
+		96EF255B1D675D0700F95C51 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
+		96EF255D1D675D0F00F95C51 /* Style.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Style.cpp; sourceTree = "<group>"; };
+		96EF255E1D675D0F00F95C51 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
+		96EF25601D675FD600F95C51 /* Property.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Property.cpp; sourceTree = "<group>"; };
+		96EF25611D675FD600F95C51 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +90,20 @@
 		96EF25091D662D2F00F95C51 /* StyleSheet */ = {
 			isa = PBXGroup;
 			children = (
-				96EF250A1D662D2F00F95C51 /* StyleSheet.h */,
-				96EF250C1D662D2F00F95C51 /* StyleSheet.m */,
+				96EF254E1D675CD000F95C51 /* Document.cpp */,
+				96EF254F1D675CD000F95C51 /* Document.h */,
+				96EF25511D675CE100F95C51 /* Element.cpp */,
+				96EF25521D675CE100F95C51 /* Element.h */,
+				96EF25541D675CEE00F95C51 /* Parser.cpp */,
+				96EF25551D675CEF00F95C51 /* Parser.h */,
+				96EF25601D675FD600F95C51 /* Property.cpp */,
+				96EF25611D675FD600F95C51 /* Property.h */,
+				96EF25571D675CFA00F95C51 /* PropertySet.cpp */,
+				96EF25581D675CFA00F95C51 /* PropertySet.h */,
+				96EF255A1D675D0700F95C51 /* Selector.cpp */,
+				96EF255B1D675D0700F95C51 /* Selector.h */,
+				96EF255D1D675D0F00F95C51 /* Style.cpp */,
+				96EF255E1D675D0F00F95C51 /* Style.h */,
 			);
 			path = StyleSheet;
 			sourceTree = "<group>";
@@ -125,7 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96EF250D1D662D2F00F95C51 /* StyleSheet.m in Sources */,
+				96EF255C1D675D0700F95C51 /* Selector.cpp in Sources */,
+				96EF25561D675CEF00F95C51 /* Parser.cpp in Sources */,
+				96EF25621D675FD600F95C51 /* Property.cpp in Sources */,
+				96EF25591D675CFA00F95C51 /* PropertySet.cpp in Sources */,
+				96EF25531D675CE100F95C51 /* Element.cpp in Sources */,
+				96EF255F1D675D0F00F95C51 /* Style.cpp in Sources */,
+				96EF25501D675CD000F95C51 /* Document.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
