@@ -16,24 +16,68 @@ namespace StyleSheet
     class CssSelector
     {
     public:
-        static CssSelector CssTypeSelector(const string& name);
-        static CssSelector CssClassSelector(const string& name);
-        static CssSelector CssIdSelector(const string& name);
-        static CssSelector parse(const string& str);
+        enum Type
+        {
+            kType,
+            kClass,
+            kId
+        };
         
-        bool operator==(const CssSelector& other) const;
-        bool operator!=(const CssSelector& other) const { return !(*this == other); }
-        bool operator<(const CssSelector& other) const;
+        static CssSelector CssTypeSelector(const string& name)
+        {
+            return CssSelector(kType, name);
+        }
+        static CssSelector CssClassSelector(const string& name)
+        {
+            return CssSelector(kClass, name);
+        }
+        static CssSelector CssIdSelector(const string& name)
+        {
+            return CssSelector(kId, name);
+        }
+        static CssSelector parse(string str);
         
-        const string& getName() const;
-        bool isType() const;
-        bool isClass() const;
-        bool isId() const;
+        bool operator==(const CssSelector& other) const
+        {
+            return type == other.type && name == other.name;
+        }
+        bool operator!=(const CssSelector& other) const
+        {
+            return !(operator==(other));
+        }
+        bool operator<(const CssSelector& other) const
+        {
+            return type < other.type || (type == other.type && name < other.name);
+        }
+        
+        const Type& getType() const
+        {
+            return type;
+        }
+        const string& getName() const
+        {
+            return name;
+        }
+        bool isType() const
+        {
+            return type == kType;
+        }
+        bool isClass() const
+        {
+            return type == kClass;
+        }
+        bool isId() const
+        {
+            return type == kId;
+        }
         
         string toString() const;
         
     private:
-        CssSelector();
+        CssSelector(Type type, const string& name);
+        
+        const Type type;
+        const string name;
     };
     
 }
