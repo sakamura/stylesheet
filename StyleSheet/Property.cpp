@@ -7,3 +7,27 @@
 //
 
 #include "Property.h"
+
+const StyleSheet::CssProperty& StyleSheet::CssProperty::Empty()
+{
+    static const CssProperty empty("", "");
+    return empty;
+}
+
+StyleSheet::CssProperty StyleSheet::CssProperty::parse(const string& str)
+{
+    string name, value;
+    if (parametrizer(str, ':', ';', name, value))
+    {
+        return CssProperty(name, value);
+    }
+    else
+    {
+        return Empty();
+    }
+}
+
+StyleSheet::string StyleSheet::CssProperty::toString() const
+{
+    return name + ": " + value + ";";
+}

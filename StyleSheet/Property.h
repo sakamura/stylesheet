@@ -19,15 +19,36 @@ namespace StyleSheet
         static const CssProperty& Empty();
         static CssProperty parse(const string& str);
         
-        CssProperty(const string& name, const string& value);
+        CssProperty(const string& _name, const string& _value) :
+            name(_name),
+            value(_value)
+        {
+        }
         
-        bool operator<(const CssProperty& p) const;
-        const string& getName() const;
-        const string& getValue() const;
+        bool operator<(const CssProperty& p) const
+        {
+            return name < p.name;
+        }
         
-        bool isValid() const;
+        const string& getName() const
+        {
+            return name;
+        }
+        const string& getValue() const
+        {
+            return value;
+        }
+        
+        bool isValid() const
+        {
+            return !name.empty();
+        }
         
         string toString() const;
+        
+    private:
+        const string name;
+        const string value;
     };
 }
 
