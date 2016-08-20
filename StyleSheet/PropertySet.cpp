@@ -7,3 +7,29 @@
 //
 
 #include "PropertySet.h"
+
+StyleSheet::CssPropertySet StyleSheet::CssPropertySet::parse(const string& str)
+{
+    CssPropertySet set;
+    
+    tokenizer(str, ';', [&set](const string& str)
+              {
+                  set.add(CssProperty::parse(str));
+              });
+    
+    return set;
+}
+
+StyleSheet::string StyleSheet::CssPropertySet::toString() const
+{
+    std::string str;
+    for (const_iterator it = begin(); it != end(); ++it)
+    {
+        if (!str.empty())
+        {
+            str += " ";
+        }
+        str += it->second.toString();
+    }
+    return str;
+}
