@@ -16,19 +16,43 @@ namespace StyleSheet
 {
     class CssElement
     {
+    public:
         static CssElement parse(const string& str);
         
-        CssElement(const CssSelector& selector, const CssPropertySet& properties);
+        CssElement(const CssSelector& selector_, const CssPropertySet& properties_) :
+            selector(selector_),
+            properties(properties_)
+        {
+        }
         
-        bool operator<(const CssElement& e) const;
+        bool operator<(const CssElement& e) const
+        {
+            return selector < e.selector;
+        }
         
-        const CssSelector& getSelector() const;
-        size_t getPropertyCount() const;
-        const CssPropertySet& getProperties() const;
+        const CssSelector& getSelector() const
+        {
+            return selector;
+        }
+        size_t getPropertyCount() const
+        {
+            return properties.size();
+        }
+        const CssPropertySet& getProperties() const
+        {
+            return properties;
+        }
         
-        void addProperty(const CssProperty& prop);
+        void addProperty(const CssProperty& prop)
+        {
+            properties.add(prop);
+        }
         
         string toString() const;
+        
+    private:
+        CssSelector selector;
+        CssPropertySet properties;
     };
 }
 

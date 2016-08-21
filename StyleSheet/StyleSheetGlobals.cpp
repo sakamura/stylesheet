@@ -43,7 +43,7 @@ StyleSheet::string StyleSheet::trim(string& str)
 bool StyleSheet::parametrizer(const string& str, const string::value_type& delim, const string::value_type& eoldelim, string& left, string& right)
 {
     const size_t cutoff = str.find_first_of(delim);
-    if (cutoff == std::string::npos)
+    if (cutoff == string::npos)
     {
         throw std::invalid_argument("Cannot find delimiter");
         return false;
@@ -52,7 +52,7 @@ bool StyleSheet::parametrizer(const string& str, const string::value_type& delim
     trim(left);
     
     const size_t endofline = str.find_first_of(eoldelim, cutoff);
-    if (endofline == std::string::npos)
+    if (endofline == string::npos)
     {
         if (cutoff == str.size() - 1)
         {
