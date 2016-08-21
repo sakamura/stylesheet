@@ -10,21 +10,33 @@
 #define Document_h
 
 #include "Element.h"
+#include <unordered_set>
 
 namespace StyleSheet
 {
-    class CssDocument
+    class CssDocument : protected std::unordered_set<CssElement>
     {
+    public:
         static CssDocument parse(const string& doc);
         
-        CssDocument();
-        
-        size_t getElementCount() const;
+        size_t getElementCount() const
+        {
+            return size();
+        }
         CssElement getElement(const CssSelector& selector) const;
-        bool hasSelector(const CssSelector& selector) const;
-        void addElement(const CssElement& element);
+        bool hasSelector(const CssSelector& selector) const
+        {
+            CssElement element(selector, CssPropertySet());
+            return find(element) != end();
+        }
+        void addElement(const CssElement& element)
+        {
+            if (element.getPropertyCount() != 0)
+            {
+                insert(element);
+            }
+        }
         string toString() const;
-        
     };
 }
 

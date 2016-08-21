@@ -72,14 +72,28 @@ namespace StyleSheet
         }
         
         string toString() const;
-        
+                
     private:
         CssSelector(Type type, const string& name);
         
         Type type;
         string name;
     };
-    
+}
+
+
+namespace std
+{
+    template<>
+    struct hash<StyleSheet::CssSelector>
+    {
+        std::size_t operator()(const StyleSheet::CssSelector& k) const
+        {
+            return
+                StyleSheet::rotl(std::hash<int>()((int)k.getType()),1) ^
+                std::hash<std::string>()(k.getName());
+        }
+    };
 }
 
 #endif /* Selector_h */

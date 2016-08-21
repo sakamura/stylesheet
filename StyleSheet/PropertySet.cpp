@@ -23,7 +23,7 @@ StyleSheet::CssPropertySet StyleSheet::CssPropertySet::parse(const string& str)
 StyleSheet::string StyleSheet::CssPropertySet::toString() const
 {
     std::string str;
-    for (const_iterator it = begin(); it != end(); ++it)
+    for (auto it = begin(); it != end(); ++it)
     {
         if (!str.empty())
         {

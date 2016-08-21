@@ -50,9 +50,25 @@ namespace StyleSheet
         
         string toString() const;
         
+        bool operator== (const CssElement& r) const
+        {
+            return getSelector() == r.getSelector();
+        }
     private:
         CssSelector selector;
         CssPropertySet properties;
+    };
+}
+
+namespace std
+{
+    template<>
+    struct hash<StyleSheet::CssElement>
+    {
+        std::size_t operator()(const StyleSheet::CssElement& k) const
+        {
+            return std::hash<StyleSheet::CssSelector>()(k.getSelector());
+        }
     };
 }
 
