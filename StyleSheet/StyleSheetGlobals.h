@@ -23,7 +23,7 @@ namespace StyleSheet {
     template<class T>
     inline T rotl(const T& value, int shift)
     {
-        const int bitsize = sizeof(value) * std::numeric_limits<T>::digits;
+        constexpr int bitsize = sizeof(value) * std::numeric_limits<T>::digits;
         shift = shift >=0 ? shift % bitsize : -( (-shift) % bitsize );
         return (value<<shift) | (value>>(bitsize-shift));
     }
