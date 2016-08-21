@@ -16,6 +16,7 @@ namespace StyleSheet
 {
     class CssPropertySet : protected std::map<string, CssProperty>
     {
+    protected:
         typedef typename std::map<string, CssProperty> Super;
         
     public:

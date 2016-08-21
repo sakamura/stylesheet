@@ -47,8 +47,8 @@ namespace StyleSheet
         string toString() const;
         
     private:
-        const string name;
-        const string value;
+        string name;
+        string value;
     };
 }
 

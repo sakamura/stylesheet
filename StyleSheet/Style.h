@@ -12,6 +12,7 @@
 #include "PropertySet.h"
 #include "Selector.h"
 #include <list>
+#include <set>
 
 namespace StyleSheet
 {
@@ -20,19 +21,51 @@ namespace StyleSheet
     class CssStyle
     {
     public:
-        CssStyle(const string& cssId, const string& cssType);
-        const CssSelector& getIdSelector() const;
-        const CssSelector& getTypeSelector() const;
+        CssStyle(const string& cssId, const string& cssType) :
+            id(CssSelector::CssIdSelector(cssId)),
+            type(CssSelector::CssTypeSelector(cssType))
+        {
+        }
+        const CssSelector& getIdSelector() const
+        {
+            return id;
+        }
+        const CssSelector& getTypeSelector() const
+        {
+            return type;
+        }
         
-        void setType(const string& cssType);
-        const CssSelectorList& getClassSelectors() const;
+        void setType(const string& cssType)
+        {
+            type = CssSelector::CssTypeSelector(cssType);
+        }
+        const CssSelectorList& getClassSelectors() const
+        {
+            return classSelectors;
+        }
         
         void addClasses(const string& classTagValue);
         void addClass(const string& c);
         void removeClass(const string& c);
-        bool hasClass(const string& c);
-        void setInlineProperties(const CssPropertySet& inlineProperies);
-        const CssPropertySet& getInlineProperties() const;
+        bool hasClass(const string& c)
+        {
+            return hasClassSelectors.find(c) != hasClassSelectors.end();
+        }
+        void setInlineProperties(const CssPropertySet& inlineProperties_)
+        {
+            inlineProperties = inlineProperties_;
+        }
+        const CssPropertySet& getInlineProperties() const
+        {
+            return inlineProperties;
+        }
+        
+    private:
+        const CssSelector id;
+        CssSelector type;
+        CssSelectorList classSelectors;
+        std::set<string> hasClassSelectors;
+        CssPropertySet inlineProperties;
     };
 }
 

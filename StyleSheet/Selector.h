@@ -76,8 +76,8 @@ namespace StyleSheet
     private:
         CssSelector(Type type, const string& name);
         
-        const Type type;
-        const string name;
+        Type type;
+        string name;
     };
     
 }
