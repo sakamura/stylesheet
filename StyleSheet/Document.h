@@ -24,6 +24,10 @@ namespace StyleSheet
             return size();
         }
         CssElement getElement(const CssSelector& selector) const;
+        
+        CssPropertySet getProperties(const CssSelector& selector) const;
+        CssPropertySet getProperties(const CssSelectorList& selectors) const;
+        
         bool hasSelector(const CssSelector& selector) const
         {
             CssElement element(selector, CssPropertySet());

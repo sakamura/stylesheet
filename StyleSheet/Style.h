@@ -11,13 +11,10 @@
 
 #include "PropertySet.h"
 #include "Selector.h"
-#include <list>
 #include <set>
 
 namespace StyleSheet
 {
-    typedef std::list<CssSelector> CssSelectorList;
-    
     class CssStyle
     {
     public:

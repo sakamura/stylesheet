@@ -7,3 +7,15 @@
 //
 
 #include "Parser.h"
+
+StyleSheet::CssPropertySet StyleSheet::CssParser::getProperties(const CssStyle& style) const
+{
+    CssPropertySet result;
+    
+    result.add(style.getInlineProperties());
+    result.add(doc.getProperties(style.getIdSelector()));
+    result.add(doc.getProperties(style.getTypeSelector()));
+    result.add(doc.getProperties(style.getClassSelectors()));
+
+    return result;
+}

@@ -32,6 +32,31 @@ StyleSheet::CssElement StyleSheet::CssDocument::getElement(const CssSelector& se
     }
 }
 
+StyleSheet::CssPropertySet StyleSheet::CssDocument::getProperties(const CssSelector& selector) const
+{
+    CssElement element(selector, CssPropertySet());
+    auto result = find(element);
+    if (result != end())
+    {
+        return result->getProperties();
+    }
+    else
+    {
+        return CssPropertySet();
+    }
+}
+
+StyleSheet::CssPropertySet StyleSheet::CssDocument::getProperties(const CssSelectorList& selectors) const
+{
+    CssPropertySet result;
+    for (auto it = selectors.begin(); it != selectors.end(); ++it)
+    {
+        result.add(getProperties(*it));
+    }
+    return result;
+}
+
+
 StyleSheet::string StyleSheet::CssDocument::toString() const
 {
     string result;

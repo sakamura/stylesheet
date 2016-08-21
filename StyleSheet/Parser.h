@@ -16,10 +16,16 @@ namespace StyleSheet
 {
     class CssParser
     {
-        CssParser(const CssDocument& doc);
+    public:
+        CssParser(const CssDocument& doc_) :
+            doc(doc_)
+        {
+        }
         CssPropertySet getProperties(const CssStyle& style) const;
+        
+    private:
+        const CssDocument& doc;
     };
-    
 }
 
 #endif /* Parser_h */

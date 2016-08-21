@@ -10,6 +10,7 @@
 #define Selector_h
 
 #include "StyleSheetGlobals.h"
+#include <list>
 
 namespace StyleSheet
 {
@@ -79,6 +80,8 @@ namespace StyleSheet
         Type type;
         string name;
     };
+    
+    typedef std::list<CssSelector> CssSelectorList;
 }
 
 
