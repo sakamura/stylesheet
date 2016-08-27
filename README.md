@@ -7,3 +7,10 @@ As added bonus, this tool doesn't require boost, merely the C++11 stdlib.
 License: MIT
 
 Current state: Untested, compiles on XCode-Beta. More later!
+
+Next steps:
+- Testing and fixing bugs.
+- Further optimize code and cleanup, I am especially unhappy of a few const removal.
+- If needed by someone on another platform, add up makefiles and projects.
+- Formal penetration analysis and hack-proofing (this lib could very well be used in a bigger project with public CSS parsing, who knows?)
+- Extending the project, new features!
