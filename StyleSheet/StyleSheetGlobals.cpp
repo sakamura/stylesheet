@@ -28,25 +28,6 @@
 #include "StyleSheetGlobals.h"
 #include <stdexcept>
 
-void StyleSheet::tokenizer(const string& str, const string::value_type& delim, std::function<void (const string& token)> f)
-{
-    if (str.empty())
-    {
-        return;
-    }
-    
-    size_t start;
-    size_t end = (size_t)-1;
-    do
-    {
-        start = end + 1;
-        end = str.find_first_of(delim, start);
-
-        f(str.substr(start, end-start));
-
-    } while (end < string::npos);
-}
-
 static bool isnotspace(const char& c)
 {
     return !isspace(c);
