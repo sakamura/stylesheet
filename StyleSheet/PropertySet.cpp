@@ -33,7 +33,8 @@ StyleSheet::CssPropertySet StyleSheet::CssPropertySet::parse(const string& str)
     
     tokenizer(str, ';', [&set](const string& str)
               {
-                  set.add(CssProperty::parse(str));
+                  if (!str.empty())
+                      set.add(CssProperty::parse(str));
               });
     
     return set;

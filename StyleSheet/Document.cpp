@@ -32,7 +32,8 @@ StyleSheet::CssDocument StyleSheet::CssDocument::parse(const string& doc)
     CssDocument document;
     tokenizer(doc, '\n', [&document](const string& str)
               {
-                  document.addElement(CssElement::parse(str));
+                  if (!str.empty())
+                      document.addElement(CssElement::parse(str));
               });
     return document;
 }
